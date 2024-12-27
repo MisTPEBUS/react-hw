@@ -30,12 +30,12 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
         <div className="mt-4">
           <h4 className="font-bold">更多圖片：</h4>
           <div className="flex gap-2 mt-2 cursor-pointer">
-            {product.imagesUrl.map((imgUrl) => (
+            {product.imagesUrl.map((imgUrl, index) => (
               <img
-                key={`${product.id}`}
+                key={`${product.id}-${index}`}
                 src={imgUrl}
                 onClick={() => handleSelectPic(imgUrl)}
-                alt={`${product.title}`}
+                alt={`${product.title}-${index}`}
                 className="w-32  object-cover rounded"
               />
             ))}
