@@ -1,10 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
-
-import { ProductProps } from "@/types/Product";
-import ProductCard from "@/components/ProductCard";
-import { getProducts } from "@/mock/getProducts";
-import ProductDetail from "@/components/ProductDetail";
+import { useState } from "react";
 
 export default function HomePage() {
   const [productName, setProductName] = useState("");

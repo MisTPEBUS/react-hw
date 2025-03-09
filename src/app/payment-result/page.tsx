@@ -1,11 +1,18 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function PaymentResult() {
-  const searchParams = useSearchParams();
+  return (
+    <Suspense fallback={<div>載入中...</div>}>
+      <PaymentResultContent />
+    </Suspense>
+  );
+}
 
-  // 解析 URL 參數
+function PaymentResultContent() {
+  const searchParams = useSearchParams();
   const queryParams = Array.from(searchParams.entries());
 
   return (
