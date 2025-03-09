@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["https://ccore.newebpay.com", "http://localhost:3000"],
+    },
+  },
 };
 
 export default nextConfig;
