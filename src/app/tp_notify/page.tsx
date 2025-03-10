@@ -50,7 +50,7 @@ export default function TaipeiBusBinding() {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* 公司名稱 */}
         <div>
-          <label className="block font-semibold">公司名稱</label>
+          <label className="block font-semibold mb-2">公司名稱</label>
           <input
             type="text"
             value="台北客運"
@@ -60,13 +60,13 @@ export default function TaipeiBusBinding() {
         </div>
 
         {/* 部門 (必填) */}
-        <div>
-          <label className="block font-semibold">
+        <div className="relative">
+          <label className="block font-semibold mb-2">
             部門 <span className="text-red-500">*</span>
           </label>
           <select
             {...register("department")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded bg-white appearance-none pr-8"
           >
             <option value="">請選擇部門</option>
             <option value="D64業務部">D64業務部</option>
@@ -77,6 +77,8 @@ export default function TaipeiBusBinding() {
             <option value="T04新店站">T04新店站</option>
             <option value="T05木柵站">T05木柵站</option>
           </select>
+          {/* 模擬下拉箭頭 */}
+          <div className="absolute right-2 top-10 pointer-events-none">▼</div>
           {errors.department && (
             <p className="text-red-500 text-sm mt-1">
               {errors.department.message}
@@ -86,7 +88,7 @@ export default function TaipeiBusBinding() {
 
         {/* 職稱 */}
         <div>
-          <label className="block font-semibold">職稱</label>
+          <label className="block font-semibold mb-2">職稱</label>
           <input
             type="text"
             {...register("position")}
@@ -97,7 +99,7 @@ export default function TaipeiBusBinding() {
 
         {/* 專案群組 (標題變成橘色) */}
         <div>
-          <label className="block font-semibold ">專案群組</label>
+          <label className="block font-semibold mb-2 ">專案群組</label>
           <input
             type="text"
             {...register("projectGroup")}
@@ -108,7 +110,7 @@ export default function TaipeiBusBinding() {
 
         {/* 員工編號 (必填) */}
         <div>
-          <label className="block font-semibold">
+          <label className="block font-semibold mb-2">
             員工編號 <span className="text-red-500">*</span>
           </label>
           <input
@@ -126,7 +128,7 @@ export default function TaipeiBusBinding() {
 
         {/* 姓名 */}
         <div>
-          <label className="block font-semibold">姓名</label>
+          <label className="block font-semibold mb-2">姓名</label>
           <input
             type="text"
             {...register("name")}
